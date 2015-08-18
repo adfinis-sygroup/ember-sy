@@ -1,9 +1,17 @@
 import Ember  from 'ember'
 import layout from '../templates/components/sy-sidenav-list'
 
-export default Ember.Component.extend({
+const SySidenavList = Ember.Component.extend({
   layout: layout,
 
   tagName: 'ul',
-  classNames: [ 'nav-side-list' ]
+  classNames: [ 'nav-side-list' ],
+
+  header: null
 })
+
+SySidenavList.reopenClass({
+  positionalParams: [ 'header' ]
+})
+
+export default SySidenavList
