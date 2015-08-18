@@ -1,13 +1,21 @@
 {{#sy-sidenav as |component section|}}
   {{#if (eq section 'body')}}
-    <ul class="nav-side-list">
+    {{#sy-sidenav-list}}
       <li class="nav-side-list-item">
         {{#link-to 'index'}}
           <i class="fa fa-home"></i>
           Home
         {{/link-to}}
       </li>
-    </ul>
+    {{/sy-sidenav-list}}
+    {{#sy-sidenav-list header='Settings'}}
+      <li class="nav-side-list-item">
+        {{#link-to 'index'}}
+          <i class="fa fa-user"></i>
+          User
+        {{/link-to}}
+      </li>
+    {{/sy-sidenav-list}}
   {{else if (eq section 'page-content')}}
     <main class="page-main">
       <div class="page-content">
