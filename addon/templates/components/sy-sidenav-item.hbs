@@ -1,0 +1,17 @@
+{{#if link}}
+  {{#link-to link}}
+    {{#if icon}}<i class="fa fa-{{icon}}"></i>{{/if}}
+    {{#if hasBlock}}
+      {{yield}}
+    {{else}}
+      {{text}}
+    {{/if}}
+  {{/link-to}}
+{{else}}
+  {{#if icon}}<i class="fa fa-{{icon}}"></i>{{/if}}
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{text}}
+  {{/if}}
+{{/if}}

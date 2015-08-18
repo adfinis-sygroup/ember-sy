@@ -1,20 +1,13 @@
 {{#sy-sidenav as |component section|}}
   {{#if (eq section 'body')}}
     {{#sy-sidenav-list}}
-      <li class="nav-side-list-item">
-        {{#link-to 'index'}}
-          <i class="fa fa-home"></i>
-          Home
-        {{/link-to}}
-      </li>
+      {{sy-sidenav-item 'index' 'home' 'Home'}}
     {{/sy-sidenav-list}}
     {{#sy-sidenav-list header='Settings'}}
-      <li class="nav-side-list-item">
-        {{#link-to 'index'}}
-          <i class="fa fa-user"></i>
-          User
-        {{/link-to}}
-      </li>
+      {{#sy-sidenav-item 'index' 'user'}}
+        User
+      {{/sy-sidenav-item}}
+      {{sy-sidenav-item 'index' 'users' 'Users'}}
     {{/sy-sidenav-list}}
   {{else if (eq section 'page-content')}}
     <main class="page-main">
