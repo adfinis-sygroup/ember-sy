@@ -17,9 +17,12 @@ export default Ember.Component.extend({
   layout,
 
   classNames: [ 'flex-grow' ],
+
   expand:   false,
-  autohide: computedLocalStorage('sy-sidenav-autohide', false),
   slide:    true,
+
+  autohide: computedLocalStorage('sy-sidenav-autohide', false),
+  showAutohideButton: true,
 
   application: computed(function() {
     return this.container.lookup('application:main')

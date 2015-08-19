@@ -9,11 +9,13 @@
   <section class="nav-side-body">
     {{yield this 'body'}}
   </section>
-  <footer class="nav-side-footer">
-    <button class="nav-hide btn" type="button" title="Toggle navigation" {{action 'autohide' on='click'}}>
-      <i class="fa fa-chevron-{{if autohide 'right' 'left'}}"></i>
-    </button>
-  </footer>
+  {{#if showAutohideButton}}
+    <footer class="nav-side-footer">
+      <button class="nav-hide btn" type="button" title="Toggle navigation" {{action 'autohide' on='click'}}>
+        <i class="fa fa-chevron-{{if autohide 'right' 'left'}}"></i>
+      </button>
+    </footer>
+  {{/if}}
 </nav>
 {{yield this 'page-content'}}
 <div class="page-main-overlay" {{action 'close' on='click'}}></div>
