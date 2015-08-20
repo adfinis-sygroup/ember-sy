@@ -18,8 +18,8 @@ export default Ember.Component.extend({
 
   classNames: [ 'flex-grow' ],
 
-  expand:   false,
-  slide:    true,
+  expand: false,
+  slide:  true,
 
   autohide: computedLocalStorage('sy-sidenav-autohide', false),
   showAutohideButton: true,
