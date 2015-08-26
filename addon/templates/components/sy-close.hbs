@@ -1,7 +1,5 @@
-<button type="button" class="close" aria-label="Close" {{action 'closeVehiclecheck' vehiclecheckId}}>
-  {{#unless hasBlock}}
-    <span aria-hidden="true">&times;</span>
-  {{else}}
-    {{yield this}}
-  {{/unless}}
-</button>
+{{#unless hasBlock}}
+  <span aria-hidden="true">&times;</span>
+{{else}}
+  {{yield this}}
+{{/unless}}
