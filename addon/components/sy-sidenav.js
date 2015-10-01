@@ -36,7 +36,7 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     this.$('nav.slide-in').one(animationend, () => {
-      this.set('slide', false)
+      Ember.run(() => this.set('slide', false))
     })
   },
 
