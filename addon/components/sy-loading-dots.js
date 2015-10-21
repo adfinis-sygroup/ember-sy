@@ -1,7 +1,7 @@
-import Ember  from 'ember'
-import layout from '../templates/components/sy-loading-dots'
+import Component from 'ember-component'
+import layout    from '../templates/components/sy-loading-dots'
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   tagName: 'span',

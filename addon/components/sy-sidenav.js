@@ -1,9 +1,9 @@
-import Ember                from 'ember'
-import layout               from '../templates/components/sy-sidenav'
-import computedLocalStorage from '../utils/computed-local-storage'
-
-const { computed, Component  } = Ember
-const { camelize, capitalize } = Ember.String
+import run                      from 'ember-runloop'
+import Component                from 'ember-component'
+import computed                 from 'ember-computed'
+import { camelize, capitalize } from 'ember-string'
+import layout                   from '../templates/components/sy-sidenav'
+import computedLocalStorage     from '../utils/computed-local-storage'
 
 const { floor, random } = Math
 
@@ -41,12 +41,10 @@ export default Component.extend({
   headerLink: 'index',
 
   didInsertElement() {
-    this.$('nav.slide-in').one(animationend, () => {
-      Ember.run(() => {
-        this.set('slide', false)
-        this.$('nav.slide-in').off(`.${evNamespace}-animationend`)
-      })
-    })
+    this.$('nav.slide-in').one(animationend, () => run(() => {
+      this.set('slide', false)
+      this.$('nav.slide-in').off(`.${evNamespace}-animationend`)
+    }))
   },
 
   actions: {

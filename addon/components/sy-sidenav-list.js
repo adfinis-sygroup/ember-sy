@@ -1,7 +1,7 @@
-import Ember  from 'ember'
-import layout from '../templates/components/sy-sidenav-list'
+import Component from 'ember'
+import layout    from '../templates/components/sy-sidenav-list'
 
-const SySidenavList = Ember.Component.extend({
+const SySidenavList = Component.extend({
   layout: layout,
 
   tagName: 'ul',

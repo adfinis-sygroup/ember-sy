@@ -1,7 +1,7 @@
-import Ember  from 'ember'
-import layout from '../templates/components/sy-sidenav-item'
+import Component from 'ember-component'
+import layout    from '../templates/components/sy-sidenav-item'
 
-const SySidenavItem = Ember.Component.extend({
+const SySidenavItem = Component.extend({
   layout,
 
   tagName: 'li',

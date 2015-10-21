@@ -1,6 +1,5 @@
-import Ember from 'ember'
+import computed from 'ember-computed'
 
-const { computed }           = Ember
 const { localStorage, JSON } = window
 const { stringify, parse }   = JSON
 
