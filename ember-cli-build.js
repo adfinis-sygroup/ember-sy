@@ -21,11 +21,7 @@ module.exports = function(defaults) {
     destDir: '/'
   })
 
-  var fontAwesome = funnel('node_modules/font-awesome/fonts', {
-    destDir: '/fonts'
-  })
-
   app.import('bower_components/adcssy/build/css/adcssy.css')
 
-  return app.toTree([ adcssyAssets, fontAwesome ])
+  return app.toTree([ adcssyAssets ])
 }
