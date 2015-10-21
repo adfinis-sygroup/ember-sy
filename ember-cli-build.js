@@ -15,13 +15,5 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  var adcssyAssets = funnel('bower_components/adcssy/assets', {
-    srcDir: '/',
-    include: [ 'fonts/*', 'pictures/**/*' ],
-    destDir: '/'
-  })
-
-  app.import('bower_components/adcssy/build/css/adcssy.css')
-
-  return app.toTree([ adcssyAssets ])
+  return app.toTree()
 }
