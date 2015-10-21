@@ -2,10 +2,16 @@ import Ember                from 'ember'
 import layout               from '../templates/components/sy-sidenav'
 import computedLocalStorage from '../utils/computed-local-storage'
 
-const { computed             } = Ember
+const { computed, Component  } = Ember
 const { camelize, capitalize } = Ember.String
 
+const { floor, random } = Math
+
+const evNamespace  = `sysidenav-${floor(random() * Date.now())}`
 const animationend = 'animationend mozAnimationEnd webkitAnimationEnd oanimationend MSAnimationEnd'
+  .split(' ')
+  .map(a => `${a}.${evNamespace}-animationend`)
+  .join(' ')
 
 /**
  * SySideNavigation
@@ -13,7 +19,7 @@ const animationend = 'animationend mozAnimationEnd webkitAnimationEnd oanimation
  * @class SySidenav
  * @public
  */
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   classNames: [ 'flex-grow' ],
@@ -36,7 +42,10 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     this.$('nav.slide-in').one(animationend, () => {
-      Ember.run(() => this.set('slide', false))
+      Ember.run(() => {
+        this.set('slide', false)
+        this.$('nav.slide-in').off(`.${evNamespace}-animationend`)
+      })
     })
   },
 
