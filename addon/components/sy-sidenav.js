@@ -27,7 +27,7 @@ export default Component.extend({
   expand: false,
   slide:  true,
 
-  autohide: computedLocalStorage('sy-sidenav-autohide', false),
+  autohide: computedLocalStorage('sy-sidenav-autohide', { defaultValue: false }),
   showAutohideButton: true,
 
   application: computed(function() {
