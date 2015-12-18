@@ -31,11 +31,11 @@ export default function computedStorage(storageKey, options) {
   return computed(...dependentKeys, {
     get() {
       let val = storage.getItem(storageKey)
-      return val === null ? defaultValue : serialize(val)
+      return val === null ? defaultValue : deserialize(val)
     },
     set(key, val) {
       try {
-        storage.setItem(storageKey, deserialize(val))
+        storage.setItem(storageKey, serialize(val))
       }
       catch (e) {
         console.error(e) //eslint-disable-line no-console
