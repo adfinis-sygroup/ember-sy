@@ -1,0 +1,14 @@
+.liquid-container, .liquid-child {
+  overflow: visible;
+}
+
+.liquid-container.liquid-animating,
+.liquid-container.liquid-animating .liquid-child {
+  overflow: hidden;
+}
+
+.liquid-container, .liquid-child {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}

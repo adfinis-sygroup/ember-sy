@@ -4,6 +4,10 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-addon')
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    cssnextOptions: {
+      features: { rem: false },
+      browsers: 'last 2 Firefox versions, last 2 Chrome versions'
+    },
     hinting: false
   })
 
