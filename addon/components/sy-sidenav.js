@@ -22,7 +22,7 @@ const animationend = 'animationend mozAnimationEnd webkitAnimationEnd oanimation
 export default Component.extend({
   layout,
 
-  classNames: [ 'flex-grow' ],
+  classNames: [ 'sy-sidenav-wrapper' ],
 
   expand: false,
   slide:  true,
