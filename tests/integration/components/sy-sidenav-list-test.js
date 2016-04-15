@@ -6,8 +6,6 @@ moduleForComponent('sy-sidenav-list', 'Integration | Component | sy sidenav list
 });
 
 test('it renders', function(assert) {
-  assert.expect(2);
-
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 

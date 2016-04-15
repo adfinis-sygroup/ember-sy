@@ -1,1 +1,1 @@
-Ember.libraries.register('Ember Sy', '0.2.6');
+Ember.libraries.register('Ember Sy', '0.3.0')
