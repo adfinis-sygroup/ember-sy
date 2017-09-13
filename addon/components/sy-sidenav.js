@@ -1,3 +1,4 @@
+import Ember                    from 'ember'
 import run                      from 'ember-runloop'
 import Component                from 'ember-component'
 import computed                 from 'ember-computed'
@@ -31,11 +32,11 @@ export default Component.extend({
   showAutohideButton: true,
 
   application: computed(function() {
-    return this.container.lookup('application:main')
+    return Ember.getOwner(this).resolveRegistration('application:main')
   }),
 
   title: computed('application.name', function() {
-    return capitalize(camelize(this.get('application.name')))
+    return this.get('application.name') ? capitalize(camelize(this.get('application.name'))) : ''
   }),
 
   headerLink: 'index',

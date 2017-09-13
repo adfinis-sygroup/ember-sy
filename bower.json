@@ -1,10 +1,6 @@
 {
   "name": "ember-sy",
   "dependencies": {
-    "adcssy": "adfinis-sygroup/adcssy#0.7.4",
-    "ember": "~2.4.3",
-    "ember-cli-shims": "0.1.1",
-    "ember-cli-test-loader": "0.2.2",
-    "ember-qunit-notifications": "0.1.0"
+    "adcssy": "adfinis-sygroup/adcssy#0.10.0"
   }
 }
