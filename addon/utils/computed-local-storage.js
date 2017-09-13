@@ -1,7 +1,7 @@
 import computed from 'ember-computed'
 
 const { localStorage, JSON } = window
-const { stringify, parse }   = JSON
+const { stringify, parse } = JSON
 
 const defaults = {
   storage: localStorage,
@@ -26,7 +26,7 @@ export default function computedStorage(storageKey, options) {
     deserialize,
     defaultValue,
     dependentKeys
-  } = { ...defaults, ...options }
+  } = Object.assign({}, defaults, options)
 
   return computed(...dependentKeys, {
     get() {
@@ -36,8 +36,7 @@ export default function computedStorage(storageKey, options) {
     set(key, val) {
       try {
         storage.setItem(storageKey, serialize(val))
-      }
-      catch (e) {
+      } catch (e) {
         console.error(e) //eslint-disable-line no-console
       }
 

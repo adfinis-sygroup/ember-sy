@@ -1,17 +1,17 @@
 /* eslint-env node */
-'use strict';
+'use strict'
 
-const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+const EmberAddon = require('ember-cli/lib/broccoli/ember-addon')
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
     babel: {
-      plugins: ['babel-plugin-transform-decorators-legacy', 'transform-object-rest-spread']
+      plugins: ['babel-plugin-transform-decorators-legacy']
     },
     'ember-cli-babel': {
       includePolyfill: true
-    },
-  });
+    }
+  })
 
   /*
     This build file specifies the options for the dummy test app of this
@@ -20,5 +20,5 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  return app.toTree();
-};
+  return app.toTree()
+}
