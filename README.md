@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/adfinis-sygroup/ember-sy.svg?branch=master)](https://travis-ci.org/adfinis-sygroup/adsycc)
+[![npm version](https://badge.fury.io/js/ember-sy.svg)](https://badge.fury.io/js/ember-sy)
+
 # ember-sy
 
 This README outlines the details of collaborating on this Ember addon.
