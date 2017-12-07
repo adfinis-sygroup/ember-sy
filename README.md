@@ -3,7 +3,7 @@
 
 # ember-sy
 
-This README outlines the details of collaborating on this Ember addon.
+**WARNING: This project is deprecated and should not be used anymore. It is not maintained!**
 
 ## Installation
 
