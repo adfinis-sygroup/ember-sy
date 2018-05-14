@@ -1,23 +1,23 @@
-import computed from 'ember-computed'
+import { computed } from "@ember/object";
 
-const { localStorage, JSON } = window
-const { stringify, parse } = JSON
+const { localStorage, JSON } = window;
+const { stringify, parse } = JSON;
 
 const defaults = {
   storage: localStorage,
 
   serialize(val) {
-    return stringify(val)
+    return stringify(val);
   },
 
   deserialize(val) {
-    return parse(val)
+    return parse(val);
   },
 
   defaultValue: undefined,
 
   dependentKeys: []
-}
+};
 
 export default function computedStorage(storageKey, options) {
   let {
@@ -26,21 +26,21 @@ export default function computedStorage(storageKey, options) {
     deserialize,
     defaultValue,
     dependentKeys
-  } = Object.assign({}, defaults, options)
+  } = Object.assign({}, defaults, options);
 
   return computed(...dependentKeys, {
     get() {
-      let val = storage.getItem(storageKey)
-      return val === null ? defaultValue : deserialize(val)
+      let val = storage.getItem(storageKey);
+      return val === null ? defaultValue : deserialize(val);
     },
     set(key, val) {
       try {
-        storage.setItem(storageKey, serialize(val))
+        storage.setItem(storageKey, serialize(val));
       } catch (e) {
-        console.error(e) //eslint-disable-line no-console
+        console.error(e); //eslint-disable-line no-console
       }
 
-      return val
+      return val;
     }
-  })
+  });
 }

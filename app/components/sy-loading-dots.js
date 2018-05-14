@@ -1,1 +1,1 @@
-export { default } from 'ember-sy/components/sy-loading-dots';
+export { default } from "ember-sy/components/sy-loading-dots";
