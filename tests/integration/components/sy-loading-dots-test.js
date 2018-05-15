@@ -1,15 +1,17 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { module, test } from "qunit";
+import { setupRenderingTest } from "ember-qunit";
+import { render, find } from "@ember/test-helpers";
+import hbs from "htmlbars-inline-precompile";
 
-moduleForComponent('sy-loading-dots', 'Integration | Component | sy loading dots', {
-  integration: true
-});
+module("Integration | Component | sy loading dots", function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  test("it renders", async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{sy-loading-dots}}`);
+    await render(hbs`{{sy-loading-dots}}`);
 
-  assert.equal(this.$().text().trim(), '...');
+    assert.equal(find("*").textContent.trim(), "...");
+  });
 });

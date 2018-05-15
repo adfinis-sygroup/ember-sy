@@ -1,1 +1,1 @@
-export { default } from 'ember-sy/mixins/route-with-subnav'
+export { default } from "ember-sy/mixins/route-with-subnav";

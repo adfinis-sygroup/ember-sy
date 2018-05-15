@@ -1,1 +1,1 @@
-export { default } from 'ember-sy/components/sy-sidenav-item';
+export { default } from "ember-sy/components/sy-sidenav-item";

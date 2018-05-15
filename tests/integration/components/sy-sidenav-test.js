@@ -1,15 +1,17 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { module, test } from "qunit";
+import { setupRenderingTest } from "ember-qunit";
+import { render, find } from "@ember/test-helpers";
+import hbs from "htmlbars-inline-precompile";
 
-moduleForComponent('sy-sidenav', 'Integration | Component | sy sidenav', {
-  integration: true
-});
+module("Integration | Component | sy sidenav", function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  test("it renders", async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{sy-sidenav}}`);
+    await render(hbs`{{sy-sidenav}}`);
 
-  assert.equal(this.$().text().trim(), '');
+    assert.equal(find("*").textContent.trim(), "");
+  });
 });

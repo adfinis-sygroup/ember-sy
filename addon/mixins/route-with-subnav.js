@@ -1,4 +1,4 @@
-import Mixin from 'ember-metal/mixin'
+import Mixin from "@ember/object/mixin";
 
 /**
  * Renders subnav route subroute into subnav outlet
@@ -14,10 +14,10 @@ export default Mixin.create({
    * @return {void}
    */
   renderTemplate() {
-    this._super(...arguments)
+    this._super(...arguments);
     this.render(`${this.routeName}.subnav`, {
-      into: 'application',
-      outlet: 'subnav'
-    })
+      into: "application",
+      outlet: "subnav"
+    });
   }
-})
+});
